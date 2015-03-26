@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<ul class="nav nav-pills">
+	<li data-bind="visible: loggedIn() == false"><a href="#/register">Register</a></li>
+	<li data-bind="visible: loggedIn() == false"><a href="#/login">Login</a></li>
+	<li data-bind="visible: loggedIn"><a href="#/logout">Logout</a></li>
+</ul>
+<form data-bind="submit: search, visible: loggedIn">
+	<input placeholder="search" type="searchTerm" data-bind="textInput: searchTerm"/>
+</form>
+
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<div data-bind="template: {name: currentView()}"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="shows">
+	<div>
+		<h2>Shows</h2>
+
+		<p>You are logged in!</p>
+	</div>
+</script>
+
+<script type="text/html" id="login">
+	<div>
+		<h2>Login</h2>
+
+		<div data-bind="component: 'login-form'"></div>
+	</div>
+</script>
+
+<script type="text/html" id="register">
+	<div>
+		<h2>Register</h2>
+
+		<div data-bind="component: 'register-form'"></div>
+	</div>
+</script>
+
+<script type="text/html" id="search">
+	<div>
+		<h2>Search for Shows</h2>
+
+		<div data-bind="component: 'search-results'"></div>
+	</div>
+</script>
+
+<script type="text/html" id="register-form">
+	<form data-bind="submit: onSubmit">
+		<label for="first-name">First Name:</label><br/>
+		<input id="first-name" type="text" data-bind="textInput: form.firstName"/><br/><br/>
+		<label for="last-name">Last Name:</label><br/>
+		<input id="last-name" type="text" data-bind="textInput: form.lastName"/><br/><br/>
+		<label for="email">E-Mail:</label><br/>
+		<input id="email" type="email" data-bind="textInput: form.email"/><br/><br/>
+		<label for="password">Password:</label><br/>
+		<input id="password" type="password" data-bind="textInput: form.password"/><br/><br/>
+		<label for="confirm-password">Confirm password:</label><br/>
+		<input id="confirm-password" type="password" data-bind="textInput: form.confirmPassword"/><br/><br/>
+		<button type="submit">Create Account</button>
+	</form>
+</script>
+
+<script type="text/html" id="login-form">
+	<form data-bind="submit: onSubmit">
+		<label for="email">E-Mail:</label><br/>
+		<input id="email" type="email" data-bind="textInput: form.email"/><br/><br/>
+		<label for="password">Password:</label><br/>
+		<input id="password" type="password" data-bind="textInput: form.password"/><br/><br/>
+		<button type="submit">Login</button>
+	</form>
+</script>
+
+<script type="text/html" id="search-results">
+	<ul data-bind="foreach: shows">
+		<li data-bind="text: show.title"></li>
+	</ul>
+</script>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+<script src="vendor/sammy/lib/sammy.js"></script>
+<script src="vendor/knockout/dist/knockout.debug.js"></script>
+<script src="vendor/knockout-validation/dist/knockout.validation.js"></script>
+
+<script src="src/view-models/app.js"></script>
+<script src="src/view-models/search-results.js"></script>
+<script src="src/validation-rules.js"></script>
+<script src="src/components/register-form.js"></script>
+<script src="src/components/login-form.js"></script>
+<script src="src/components/search-results.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

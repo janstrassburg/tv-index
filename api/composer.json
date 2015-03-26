@@ -1,0 +1,25 @@
+{
+	"name": "janstrassburg/tv-index",
+	"description": "description_text",
+	"minimum-stability": "stable",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "author's name",
+			"email": "email@example.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"JanStrassburg\\TvIndex\\": "src/"
+		}
+	},
+	"require": {
+		"silex/silex": "1.*",
+		"mashape/unirest-php": "2.*",
+		"beberlei/assert": "2.*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.5.*"
+	}
+}

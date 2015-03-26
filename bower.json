@@ -1,0 +1,9 @@
+{
+	"name": "tv-index",
+	"dependencies": {
+		"sammy": "~0.7.6",
+		"knockout": "~3.3.0",
+		"knockout-validation": "~2.0.2",
+		"jquery-cookie": "~1.4.1"
+	}
+}

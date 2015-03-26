@@ -1,0 +1,5 @@
+/vendor/*
+/api/vendor/*
+/api/composer.lock
+/.idea/*
+/api/config/passwords/*
