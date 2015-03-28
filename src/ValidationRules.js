@@ -12,5 +12,7 @@ ko.validation.rules['areSame'] = {
 	validator: function (val, otherField) {
 		return val === this.getValue(otherField);
 	},
-	message: 'Confirm password must match password'
+	message: 'The fields must have the same value'
 };
+
+ko.validation.registerExtenders();

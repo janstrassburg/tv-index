@@ -1,3 +1,3 @@
-var searchResultsViewModel = {
+App.ViewModel.SearchResults = {
 	shows: ko.observableArray([])
 };
